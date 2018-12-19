@@ -50,4 +50,24 @@ public class EmployeeController {
         return "All employee deleted";
     }
 
+    @RequestMapping("/searchByName")
+    public String employeeFindByName(){
+        System.out.println("Find by name");
+        Employee employee = employeeRepository. findByName("Abhi");
+        return "Employee Name is "+ employee.getName()+ "Age"+employee.getAge()+"Email"+employee.getEmail()+"Experience"+employee.getExperience()+"address"+employee.getAddress();
+    }
+
+    @RequestMapping("/searchByAge")
+    public String employeeFindByAge(){
+        System.out.println("Find by Age ");
+        Employee employee = employeeRepository.findByAge(27);
+        return "Employee Name is "+ employee.getName()+ "======= Age ===="+employee.getAge()+"Email"+employee.getEmail()+"Experience"+employee.getExperience()+"address"+employee.getAddress();
+    }
+
+    @RequestMapping("/searchByExperience")
+    public String employeeFindByExperience(){
+        System.out.println("Find by Age ");
+        Employee employee = employeeRepository.findByExperience(8);
+        return "Employee Name is "+ employee.getName()+ "Age"+employee.getAge()+"Email"+employee.getEmail()+"Experience"+employee.getExperience()+"address"+employee.getAddress();
+    }
 }
