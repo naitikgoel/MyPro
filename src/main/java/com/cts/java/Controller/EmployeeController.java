@@ -156,6 +156,7 @@ public class EmployeeController {
     @ResponseBody
     public String employeeDetailsUsingParam2( @RequestParam("name") String name){
         //http://localhost:8080/passparameter2?name=Anu
+        //************************************
         System.out.println("Find by name pass parameter");
         Employee employee = employeeRepository. findByName(name);
         return "Employee Name is "+ employee.getName()+ "Age"+employee.getAge()+"Email"+employee.getEmail()+"Experience"+employee.getExperience()+"address"+employee.getAddress();
